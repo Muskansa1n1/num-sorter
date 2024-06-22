@@ -29,16 +29,16 @@ console.log(numberSorter(5)); // [5]
 
 ```
 
-## API
+# API
 
 ### numberSorter(numbers)
 Sorts numbers or an array of numbers in ascending order.
 
-# Parameters
+#### Parameters
 `numbers` (Array): An array of numbers to be sorted.
 
-# Returns
+#### Returns
 (Array): A new array with the numbers sorted in ascending order.
 
-# Throws
+#### Throws
 `TypeError`: If the input is not an array.
