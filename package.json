@@ -1,0 +1,29 @@
+{
+  "name": "number-sorter",
+  "version": "1.0.0",
+  "description": "A simple npm library for sorting numbers in ascending oreder.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muskansa1n1/number-sorter.git"
+  },
+  "keywords": [
+    "number",
+    "sort",
+    "sorter",
+    "array",
+    "ascending"
+  ],
+  "author": "Muskan Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muskansa1n1/number-sorter/issues"
+  },
+  "homepage": "https://github.com/Muskansa1n1/number-sorter#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
