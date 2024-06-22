@@ -1,4 +1,4 @@
-# number-sorter
+# sort-nums
 
 A simple npm library for sorting numbers in ascending order.
 
@@ -7,7 +7,7 @@ A simple npm library for sorting numbers in ascending order.
 Install the library using npm:
 
 ```
-$ npm install number-sorter
+$ npm install sort-nums
 
 ```
 
@@ -17,21 +17,21 @@ Import the library into your project and use it to sort numbers or arrays of num
 
 ```js
 
-const numberSorter = require('number-sorter');
+const sortNums = require('sort-nums');
 
-console.log(numberSorter(3, 1, 4, 1, 5, 9)); // [1, 1, 3, 4, 5, 9]
+console.log(sortNums(3, 1, 4, 1, 5, 9)); // [1, 1, 3, 4, 5, 9]
 
 const numbers = [3, 1, 4, 1, 5, 9];
-const sortedNumbers = numberSorter(numbers);
+const sortedNumbers = sortNums(numbers);
 console.log(sortedNumbers); // [1, 1, 3, 4, 5, 9]
 
-console.log(numberSorter(5)); // [5]
+console.log(sortNums(5)); // [5]
 
 ```
 
 # API
 
-### numberSorter(numbers)
+### sortNums(numbers)
 Sorts numbers or an array of numbers in ascending order.
 
 #### Parameters
