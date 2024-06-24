@@ -35,10 +35,10 @@ console.log(numSorter(5)); // [5]
 Sorts numbers or an array of numbers in ascending order.
 
 #### Parameters
-`numbers` (Array): An array of numbers to be sorted.
+`numbers` (Array): Numbers or an array of numbers to be sorted.
 
 #### Returns
 (Array): A new array with the numbers sorted in ascending order.
 
 #### Throws
-`TypeError`: If the input is not an array.
+`TypeError`: If the input is not number.
