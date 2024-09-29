@@ -1,7 +1,7 @@
 {
   "name": "num-sorter",
   "version": "1.0.0",
-  "description": "A simple npm library for sorting numbers in ascending order.",
+  "description": "A simple npm library for sorting numbers.",
   "main": "index.js",
   "scripts": {
     "test": "jest"

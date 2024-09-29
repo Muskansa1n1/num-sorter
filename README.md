@@ -1,6 +1,6 @@
 # num-sorter
 
-A simple npm library for sorting numbers in ascending order.
+A versatile npm library for sorting numbers in both ascending and descending order, with support for nested arrays, custom comparators, and handling special values.
 
 ## Installation
 
@@ -13,32 +13,48 @@ $ npm install num-sorter
 
 ## Usage
 
-Import the library into your project and use it to sort numbers or arrays of numbers:
+Import the library into your project and use it to sort numbers, arrays of numbers, or nested arrays:
 
 ```js
 
-const numSorter = require('num-sorter');
+const numSorter = require('numSorter');
 
-console.log(numSorter(3, 1, 4, 1, 5, 9)); // [1, 1, 3, 4, 5, 9]
+// Basic Usage
+console.log(numSorter(3, 1, 4, 2)); // [1, 2, 3, 4]
 
-const numbers = [3, 1, 4, 1, 5, 9];
-const sortedNumbers = numSorter(numbers);
-console.log(sortedNumbers); // [1, 1, 3, 4, 5, 9]
+// With options: Descending order
+console.log(numSorter(3, 1, 4, 2, { descending: true })); // [4, 3, 2, 1]
 
-console.log(numSorter(5)); // [5]
+// With nested arrays: Flattening
+console.log(numSorter([1, [4, 3], 2])); // [1, 2, 3, 4]
+
+// With custom comparator: Sort absolute values
+console.log(numSorter(-3, -1, 4, 2, { comparator: (a, b) => Math.abs(a) - Math.abs(b) })); // [-1, 2, -3, 4]
+
+// With invalid numbers: Ignoring invalid entries
+console.log(numSorter(3, NaN, 2, null, '5', { ignoreInvalid: true })); // [2, 3, 5]
+
 
 ```
 
 # API
 
-### numSorter(numbers)
-Sorts numbers or an array of numbers in ascending order.
+### numSorter(...args, [options])
+Sorts numbers, arrays of numbers, or deeply nested arrays, with additional features for ordering and handling invalid numbers.
 
 #### Parameters
-`numbers` (Array): Numbers or an array of numbers to be sorted.
+`...args` (number | number[]): Numbers or arrays of numbers to be sorted. Supports deeply nested arrays.
+`options` (Object, optional):
+    1. `descending (boolean):` Sort in descending order if true. Default is false (ascending).
+    2. `flatten (boolean):` If true, flattens nested arrays before sorting. Default is true.
+    3. `ignoreInvalid (boolean):` If true, invalid entries like NaN, null, undefined, or invalid number strings will be ignored. Default is false (throws an error on invalid values).
+    4. `comparator (Function):` Custom comparator function for sorting.
 
 #### Returns
-(Array): A new array with the numbers sorted in ascending order.
+(Array): A new array with the numbers sorted according to the specified options.
 
 #### Throws
-`TypeError`: If the input is not number.
+`TypeError`: If invalid inputs are passed and ignoreInvalid is set to false.
+
+#### License
+This project is licensed under the MIT License.
